@@ -19332,9 +19332,9 @@ __metadata:
   linkType: hard
 
 "jquery@npm:^3.4.1":
-  version: 3.4.1
-  resolution: "jquery@npm:3.4.1"
-  checksum: 80fd02ae34ec672cd749ec8ca0e6100290aa236d3d8a00791aaed488476dd3183eefe0197a24068f4fec1a0d70a2ed4001afabb52376ce9df24e54261b22a77b
+  version: 3.6.4
+  resolution: "jquery@npm:3.6.4"
+  checksum: b36851196c15c64597ef09d88373688e402496469f52c2214c8148b9bfcdb9aa618d112d50f318d6e61489322509b1305ca89ed8b793d034f7a84920787c2ccb
   languageName: node
   linkType: hard
 
