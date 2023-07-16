@@ -1,9 +1,9 @@
 import {Filename, PortablePath, npath, ppath, xfs}                                                               from '@yarnpkg/fslib';
-import {DEFAULT_COMPRESSION_LEVEL}                                                                               from '@yarnpkg/libzip';
 import {parseSyml, stringifySyml}                                                                                from '@yarnpkg/parsers';
 import camelcase                                                                                                 from 'camelcase';
 import {isCI, isPR, GITHUB_ACTIONS}                                                                              from 'ci-info';
 import {UsageError}                                                                                              from 'clipanion';
+import {parse as parseDotEnv}                                                                                    from 'dotenv';
 import pLimit, {Limit}                                                                                           from 'p-limit';
 import {PassThrough, Writable}                                                                                   from 'stream';
 
@@ -33,12 +33,25 @@ const isPublicRepository = GITHUB_ACTIONS && process.env.GITHUB_EVENT_PATH
   ? !(xfs.readJsonSync(npath.toPortablePath(process.env.GITHUB_EVENT_PATH)).repository?.private ?? true)
   : false;
 
+export const LEGACY_PLUGINS = new Set([
+  `@yarnpkg/plugin-constraints`,
+  `@yarnpkg/plugin-exec`,
+  `@yarnpkg/plugin-interactive-tools`,
+  `@yarnpkg/plugin-stage`,
+  `@yarnpkg/plugin-typescript`,
+  `@yarnpkg/plugin-version`,
+  `@yarnpkg/plugin-workspace-tools`,
+]);
+
 const IGNORED_ENV_VARIABLES = new Set([
   // Used by our test environment
   `isTestEnv`,
   `injectNpmUser`,
   `injectNpmPassword`,
   `injectNpm2FaToken`,
+  `cacheCheckpointOverride`,
+  `cacheVersionOverride`,
+  `lockfileVersionOverride`,
 
   // "binFolder" is the magic location where the parent process stored the
   // current binaries; not an actual configuration settings
@@ -68,6 +81,9 @@ const IGNORED_ENV_VARIABLES = new Set([
   // https://hadoop.apache.org/docs/r0.23.11/hadoop-project-dist/hadoop-common/SingleCluster.html
   `home`,
   `confDir`,
+
+  // "YARN_REGISTRY", read by yarn 1.x, prevents yarn 2+ installations if set
+  `registry`,
 ]);
 
 export const TAG_REGEXP = /^(?!v)[a-z0-9._-]+$/i;
@@ -189,11 +205,6 @@ export const coreDefinitions: {[coreSettingName: string]: SettingsDefinition} = 
   },
 
   // Settings related to the package manager internal names
-  cacheKeyOverride: {
-    description: `A global cache key override; used only for test purposes`,
-    type: SettingsType.STRING,
-    default: null,
-  },
   globalFolder: {
     description: `Folder where all system-global files are stored`,
     type: SettingsType.ABSOLUTE_PATH,
@@ -208,7 +219,7 @@ export const coreDefinitions: {[coreSettingName: string]: SettingsDefinition} = 
     description: `Zip files compression level, from 0 to 9 or mixed (a variant of 9, which stores some files uncompressed, when compression doesn't yield good results)`,
     type: SettingsType.NUMBER,
     values: [`mixed`, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    default: DEFAULT_COMPRESSION_LEVEL,
+    default: 0,
   },
   virtualFolder: {
     description: `Folder where the virtual packages (cf doc) will be mapped on the disk (must be named __virtual__)`,
@@ -240,6 +251,12 @@ export const coreDefinitions: {[coreSettingName: string]: SettingsDefinition} = 
     description: `If true, the system-wide cache folder will be used regardless of \`cache-folder\``,
     type: SettingsType.BOOLEAN,
     default: true,
+  },
+  cacheMigrationMode: {
+    description: `Defines the conditions under which Yarn upgrades should cause the cache archives to be regenerated.`,
+    type: SettingsType.STRING,
+    values: [`always`, `match-spec`, `required-only`],
+    default: `always`,
   },
 
   // Settings related to the output style
@@ -277,10 +294,11 @@ export const coreDefinitions: {[coreSettingName: string]: SettingsDefinition} = 
     type: SettingsType.BOOLEAN,
     default: true,
   },
-  preferAggregateCacheInfo: {
-    description: `If true, the CLI will only print a one-line report of any cache changes`,
+  enableTips: {
+    description: `If true, installs will print a helpful message every day of the week`,
     type: SettingsType.BOOLEAN,
-    default: isCI,
+    default: !isCI,
+    defaultText: `<dynamic>`,
   },
   preferInteractive: {
     description: `If true, the CLI will automatically use the interactive mode when called from a TTY`,
@@ -522,6 +540,14 @@ export const coreDefinitions: {[coreSettingName: string]: SettingsDefinition} = 
     default: `throw`,
   },
 
+  // Miscellaneous settings
+  injectEnvironmentFiles: {
+    description: `List of all the environment files that Yarn should inject inside the process when it starts`,
+    type: SettingsType.ABSOLUTE_PATH,
+    default: [`.env.yarn?`],
+    isArray: true,
+  },
+
   // Package patching - to fix incorrect definitions
   packageExtensions: {
     description: `Map of package corrections to apply on the dependency tree`,
@@ -573,7 +599,6 @@ export interface ConfigurationValueMap {
   ignorePath: boolean;
   ignoreCwd: boolean;
 
-  cacheKeyOverride: string | null;
   globalFolder: PortablePath;
   cacheFolder: PortablePath;
   compressionLevel: `mixed` | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
@@ -583,13 +608,15 @@ export interface ConfigurationValueMap {
   immutablePatterns: Array<string>;
   rcFilename: Filename;
   enableGlobalCache: boolean;
+  cacheMigrationMode: `always` | `match-spec` | `required-only`;
 
   enableColors: boolean;
   enableHyperlinks: boolean;
   enableInlineBuilds: boolean;
+  enableMessageNames: boolean;
   enableProgressBars: boolean;
   enableTimers: boolean;
-  preferAggregateCacheInfo: boolean;
+  enableTips: boolean;
   preferInteractive: boolean;
   preferTruncatedLines: boolean;
   progressBarStyle: string | undefined;
@@ -633,6 +660,9 @@ export interface ConfigurationValueMap {
   enableStrictSettings: boolean;
   enableImmutableCache: boolean;
   checksumBehavior: string;
+
+  // Miscellaneous settings
+  injectEnvironmentFiles: Array<PortablePath>;
 
   // Package patching - to fix incorrect definitions
   packageExtensions: Map<string, miscUtils.ToMapValue<{
@@ -720,10 +750,10 @@ function parseSingleValue(configuration: Configuration, path: string, valueBase:
       return miscUtils.parseBoolean(value);
 
     if (typeof value !== `string`)
-      throw new Error(`Expected value (${value}) to be a string`);
+      throw new Error(`Expected configuration setting "${path}" to be a string, got ${typeof value}`);
 
     const valueWithReplacedVariables = miscUtils.replaceEnvVariables(value, {
-      env: process.env,
+      env: configuration.env,
     });
 
     switch (definition.type) {
@@ -835,7 +865,9 @@ function getDefaultValue(configuration: Configuration, definition: SettingsDefin
         return null;
 
       if (configuration.projectCwd === null) {
-        if (ppath.isAbsolute(definition.default)) {
+        if (Array.isArray(definition.default)) {
+          return definition.default.map((entry: string) => ppath.normalize(entry as PortablePath));
+        } else if (ppath.isAbsolute(definition.default)) {
           return ppath.normalize(definition.default);
         } else if (definition.isNullable) {
           return null;
@@ -947,6 +979,8 @@ export class Configuration {
 
   public static telemetry: TelemetryManager | null = null;
 
+  public isCI = isCI;
+
   public startingCwd: PortablePath;
   public projectCwd: PortablePath | null = null;
 
@@ -958,6 +992,7 @@ export class Configuration {
 
   public invalid: Map<string, string> = new Map();
 
+  public env: Record<string, string | undefined> = {};
   public packageExtensions: Map<IdentHash, Array<[string, Array<PackageExtension>]>> = new Map();
 
   public limits: Map<string, Limit> = new Map();
@@ -1044,8 +1079,8 @@ export class Configuration {
 
     const allCoreFieldKeys = new Set(Object.keys(coreDefinitions));
 
-    const pickPrimaryCoreFields = ({ignoreCwd, yarnPath, ignorePath, lockfileFilename}: CoreFields) => ({ignoreCwd, yarnPath, ignorePath, lockfileFilename});
-    const pickSecondaryCoreFields = ({ignoreCwd, yarnPath, ignorePath, lockfileFilename, ...rest}: CoreFields) => {
+    const pickPrimaryCoreFields = ({ignoreCwd, yarnPath, ignorePath, lockfileFilename, injectEnvironmentFiles}: CoreFields) => ({ignoreCwd, yarnPath, ignorePath, lockfileFilename, injectEnvironmentFiles});
+    const pickSecondaryCoreFields = ({ignoreCwd, yarnPath, ignorePath, lockfileFilename, injectEnvironmentFiles, ...rest}: CoreFields) => {
       const secondaryCoreFields: CoreFields = {};
       for (const [key, value] of Object.entries(rest))
         if (allCoreFieldKeys.has(key))
@@ -1111,6 +1146,22 @@ export class Configuration {
 
     configuration.startingCwd = startingCwd;
     configuration.projectCwd = projectCwd;
+
+    const env = Object.assign(Object.create(null), process.env);
+    configuration.env = env;
+
+    // load the environment files
+    const environmentFiles = await Promise.all(configuration.get(`injectEnvironmentFiles`).map(async p => {
+      const content = p.endsWith(`?`)
+        ? await xfs.readFilePromise(p.slice(0, -1) as PortablePath, `utf8`).catch(() => ``)
+        : await xfs.readFilePromise(p as PortablePath, `utf8`);
+
+      return parseDotEnv(content);
+    }));
+
+    for (const environmentEntries of environmentFiles)
+      for (const [key, value] of Object.entries(environmentEntries))
+        configuration.env[key] = miscUtils.replaceEnvVariables(value, {env});
 
     // load all fields of the core definitions
     configuration.importSettings(pickSecondaryCoreFields(coreDefinitions));
@@ -1202,6 +1253,9 @@ export class Configuration {
 
           const userProvidedSpec = userPluginEntry?.spec ?? ``;
           const userProvidedChecksum = userPluginEntry?.checksum ?? ``;
+
+          if (LEGACY_PLUGINS.has(userProvidedSpec))
+            continue;
 
           const pluginPath = ppath.resolve(cwd, npath.toPortablePath(userProvidedPath));
           if (!await xfs.existsPromise(pluginPath)) {
@@ -1345,7 +1399,7 @@ export class Configuration {
     return projectCwd;
   }
 
-  static async updateConfiguration(cwd: PortablePath, patch: {[key: string]: ((current: unknown) => unknown) | {} | undefined} | ((current: {[key: string]: unknown}) => {[key: string]: unknown})) {
+  static async updateConfiguration(cwd: PortablePath, patch: {[key: string]: ((current: unknown) => unknown) | {} | undefined} | ((current: {[key: string]: unknown}) => {[key: string]: unknown}), opts: {immutable?: boolean} = {}) {
     const rcFilename = getRcFilename();
     const configurationPath =  ppath.join(cwd, rcFilename as PortablePath);
 
@@ -1364,7 +1418,7 @@ export class Configuration {
       }
 
       if (replacement === current) {
-        return;
+        return false;
       }
     } else {
       replacement = current;
@@ -1396,13 +1450,15 @@ export class Configuration {
       }
 
       if (!patched) {
-        return;
+        return false;
       }
     }
 
     await xfs.changeFilePromise(configurationPath, stringifySyml(replacement), {
       automaticNewlines: true,
     });
+
+    return true;
   }
 
   static async addPlugin(cwd: PortablePath, pluginMetaList: Array<PluginMeta>) {

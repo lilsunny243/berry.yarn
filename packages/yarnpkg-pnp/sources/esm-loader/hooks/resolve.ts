@@ -67,7 +67,7 @@ export async function resolve(
 
   const {parentURL, conditions = []} = context;
 
-  const issuer = parentURL ? fileURLToPath(parentURL) : process.cwd();
+  const issuer = parentURL && loaderUtils.tryParseURL(parentURL)?.protocol === `file:` ? fileURLToPath(parentURL) : process.cwd();
 
   // Get the pnpapi of either the issuer or the specifier.
   // The latter is required when the specifier is an absolute path to a
@@ -100,11 +100,19 @@ export async function resolve(
     }
   }
 
-  const result = pnpapi.resolveRequest(specifier, issuer, {
-    conditions: new Set(conditions),
-    // TODO: Handle --experimental-specifier-resolution=node
-    extensions: allowLegacyResolve ? undefined : [],
-  });
+  let result;
+  try {
+    result = pnpapi.resolveRequest(specifier, issuer, {
+      conditions: new Set(conditions),
+      // TODO: Handle --experimental-specifier-resolution=node
+      extensions: allowLegacyResolve ? undefined : [],
+    });
+  } catch (err) {
+    if (err instanceof Error && `code` in err && err.code === `MODULE_NOT_FOUND`)
+      err.code = `ERR_MODULE_NOT_FOUND`;
+
+    throw err;
+  }
 
   if (!result)
     throw new Error(`Resolving '${specifier}' from '${issuer}' failed`);
