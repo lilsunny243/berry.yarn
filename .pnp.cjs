@@ -40127,7 +40127,7 @@ const RAW_RUNTIME_STATE =
           ["levn", "npm:0.4.1"],\
           ["prelude-ls", "npm:1.2.1"],\
           ["type-check", "npm:0.4.0"],\
-          ["word-wrap", "npm:1.2.3"]\
+          ["word-wrap", "npm:1.2.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -50375,10 +50375,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["word-wrap", [\
-      ["npm:1.2.3", {\
-        "packageLocation": "./.yarn/cache/word-wrap-npm-1.2.3-7fb15ab002-08a677e157.zip/node_modules/word-wrap/",\
+      ["npm:1.2.4", {\
+        "packageLocation": "./.yarn/cache/word-wrap-npm-1.2.4-7a75a0d62c-a749c0cf41.zip/node_modules/word-wrap/",\
         "packageDependencies": [\
-          ["word-wrap", "npm:1.2.3"]\
+          ["word-wrap", "npm:1.2.4"]\
         ],\
         "linkType": "HARD"\
       }]\
