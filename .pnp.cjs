@@ -30901,7 +30901,7 @@ const RAW_RUNTIME_STATE =
           ["@types/webpack", null],\
           ["core-js", "npm:2.6.11"],\
           ["favicons", "npm:5.3.0"],\
-          ["loader-utils", "npm:1.4.0"],\
+          ["loader-utils", "npm:1.4.2"],\
           ["lodash", "npm:4.17.21"],\
           ["webpack", null]\
         ],\
@@ -32358,7 +32358,7 @@ const RAW_RUNTIME_STATE =
           ["gatsby-core-utils", "npm:2.14.0"],\
           ["gray-matter", "npm:4.0.3"],\
           ["json5", "npm:2.2.1"],\
-          ["loader-utils", "npm:1.4.0"],\
+          ["loader-utils", "npm:1.4.2"],\
           ["lodash", "npm:4.17.21"],\
           ["mdast-util-to-string", "npm:1.1.0"],\
           ["mdast-util-toc", "npm:3.1.0"],\
@@ -37703,10 +37703,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["loader-utils", [\
-      ["npm:1.4.0", {\
-        "packageLocation": "./.yarn/cache/loader-utils-npm-1.4.0-a56254a277-d3d102cc3b.zip/node_modules/loader-utils/",\
+      ["npm:1.4.2", {\
+        "packageLocation": "./.yarn/cache/loader-utils-npm-1.4.2-b4537b2f88-2ae94cc88a.zip/node_modules/loader-utils/",\
         "packageDependencies": [\
-          ["loader-utils", "npm:1.4.0"],\
+          ["loader-utils", "npm:1.4.2"],\
           ["big.js", "npm:5.2.2"],\
           ["emojis-list", "npm:3.0.0"],\
           ["json5", "npm:1.0.1"]\
@@ -50988,7 +50988,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-scope", "npm:4.0.3"],\
           ["json-parse-better-errors", "npm:1.0.2"],\
           ["loader-runner", "npm:2.4.0"],\
-          ["loader-utils", "npm:1.4.0"],\
+          ["loader-utils", "npm:1.4.2"],\
           ["memory-fs", "npm:0.4.1"],\
           ["micromatch", "npm:3.1.10"],\
           ["mkdirp", "npm:0.5.5"],\
@@ -51956,7 +51956,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/yaml-loader-npm-0.6.0-348c22dc2a-de6f070aaf.zip/node_modules/yaml-loader/",\
         "packageDependencies": [\
           ["yaml-loader", "npm:0.6.0"],\
-          ["loader-utils", "npm:1.4.0"],\
+          ["loader-utils", "npm:1.4.2"],\
           ["yaml", "npm:1.10.2"]\
         ],\
         "linkType": "HARD"\
