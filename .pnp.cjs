@@ -25033,7 +25033,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/bin-build-npm-3.0.0-41c58b5458-b2da71f686.zip/node_modules/bin-build/",\
         "packageDependencies": [\
           ["bin-build", "npm:3.0.0"],\
-          ["decompress", "npm:4.2.0"],\
+          ["decompress", "npm:4.2.1"],\
           ["download", "npm:6.2.5"],\
           ["execa", "npm:0.7.0"],\
           ["p-map-series", "npm:1.0.0"],\
@@ -28084,10 +28084,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["decompress", [\
-      ["npm:4.2.0", {\
-        "packageLocation": "./.yarn/cache/decompress-npm-4.2.0-010ac9debb-91452b89e1.zip/node_modules/decompress/",\
+      ["npm:4.2.1", {\
+        "packageLocation": "./.yarn/cache/decompress-npm-4.2.1-a79829cc55-8247a31c6d.zip/node_modules/decompress/",\
         "packageDependencies": [\
-          ["decompress", "npm:4.2.0"],\
+          ["decompress", "npm:4.2.1"],\
           ["decompress-tar", "npm:4.1.1"],\
           ["decompress-tarbz2", "npm:4.1.1"],\
           ["decompress-targz", "npm:4.1.1"],\
@@ -28864,7 +28864,7 @@ const RAW_RUNTIME_STATE =
           ["download", "npm:6.2.5"],\
           ["caw", "npm:2.0.1"],\
           ["content-disposition", "npm:0.5.4"],\
-          ["decompress", "npm:4.2.0"],\
+          ["decompress", "npm:4.2.1"],\
           ["ext-name", "npm:5.0.0"],\
           ["file-type", "npm:5.2.0"],\
           ["filenamify", "npm:2.1.0"],\
@@ -28883,7 +28883,7 @@ const RAW_RUNTIME_STATE =
           ["archive-type", "npm:4.0.0"],\
           ["caw", "npm:2.0.1"],\
           ["content-disposition", "npm:0.5.4"],\
-          ["decompress", "npm:4.2.0"],\
+          ["decompress", "npm:4.2.1"],\
           ["ext-name", "npm:5.0.0"],\
           ["file-type", "npm:8.1.0"],\
           ["filenamify", "npm:2.1.0"],\

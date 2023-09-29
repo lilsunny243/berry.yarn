@@ -12230,8 +12230,8 @@ __metadata:
   linkType: hard
 
 "decompress@npm:^4.0.0, decompress@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "decompress@npm:4.2.0"
+  version: 4.2.1
+  resolution: "decompress@npm:4.2.1"
   dependencies:
     decompress-tar: "npm:^4.0.0"
     decompress-tarbz2: "npm:^4.0.0"
@@ -12241,7 +12241,7 @@ __metadata:
     make-dir: "npm:^1.0.0"
     pify: "npm:^2.3.0"
     strip-dirs: "npm:^2.0.0"
-  checksum: 91452b89e18f04ab8e2ee00dce400e78434b1bee32122ae5ec8d347d9a9983800336ae45d36793b818870f28b5a7217a28d8d74317a73a6424f1b608aaefc8e7
+  checksum: 8247a31c6db7178413715fdfb35a482f019c81dfcd6e8e623d9f0382c9889ce797ce0144de016b256ed03298907a620ce81387cca0e69067a933470081436cb8
   languageName: node
   linkType: hard
 
