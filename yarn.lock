@@ -25426,12 +25426,12 @@ pem@dexus/pem:
   linkType: hard
 
 "react-devtools-core@npm:^4.6.0":
-  version: 4.9.0
-  resolution: "react-devtools-core@npm:4.9.0"
+  version: 4.28.4
+  resolution: "react-devtools-core@npm:4.28.4"
   dependencies:
     shell-quote: "npm:^1.6.1"
     ws: "npm:^7"
-  checksum: 0f82288e6c5b67d20ee6a988f94fb9b35d50c40a7e7e6534be8c7da73bf896492240dc351f8be3c82f7d2c6eca02550f2b7ebff87ec5fc77be08f769bda6db68
+  checksum: 9469c7b129d417d92d05a4b6a121bb6cf4b07026cebde7dc1b5559413ed9425476e9d2748be4871b0d0aa71d1d3e738ce1824eb43807562afc2ac625b7093bc3
   languageName: node
   linkType: hard
 
