@@ -4770,6 +4770,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lmdb/lmdb-darwin-arm64@npm:2.5.3":
+  version: 2.5.3
+  resolution: "@lmdb/lmdb-darwin-arm64@npm:2.5.3"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@lmdb/lmdb-darwin-x64@npm:2.5.3":
+  version: 2.5.3
+  resolution: "@lmdb/lmdb-darwin-x64@npm:2.5.3"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@lmdb/lmdb-linux-arm64@npm:2.5.3":
+  version: 2.5.3
+  resolution: "@lmdb/lmdb-linux-arm64@npm:2.5.3"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@lmdb/lmdb-linux-arm@npm:2.5.3":
+  version: 2.5.3
+  resolution: "@lmdb/lmdb-linux-arm@npm:2.5.3"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@lmdb/lmdb-linux-x64@npm:2.5.3":
+  version: 2.5.3
+  resolution: "@lmdb/lmdb-linux-x64@npm:2.5.3"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@lmdb/lmdb-win32-x64@npm:2.5.3":
+  version: 2.5.3
+  resolution: "@lmdb/lmdb-win32-x64@npm:2.5.3"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@loadable/component@npm:^5.12.0":
   version: 5.12.0
   resolution: "@loadable/component@npm:5.12.0"
@@ -4861,6 +4903,48 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: 1305533090e76dd97939155e9052bbe5df94018e7b20b7f9f78ebf67230992706717b85019eb000d47d53d5828cba926b392c8725ea777ab2a9dfc202267c360
+  languageName: node
+  linkType: hard
+
+"@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:3.0.2"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@msgpackr-extract/msgpackr-extract-darwin-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-darwin-x64@npm:3.0.2"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@msgpackr-extract/msgpackr-extract-linux-arm64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm64@npm:3.0.2"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@msgpackr-extract/msgpackr-extract-linux-arm@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm@npm:3.0.2"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@msgpackr-extract/msgpackr-extract-linux-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-x64@npm:3.0.2"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@msgpackr-extract/msgpackr-extract-win32-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-win32-x64@npm:3.0.2"
+  conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
@@ -7618,7 +7702,7 @@ __metadata:
     gatsby-remark-table-of-contents: "npm:^1.0.0"
     gatsby-source-filesystem: "npm:^3.7.0"
     gatsby-transformer-json: "npm:^3.14.0"
-    gatsby-transformer-remark: "npm:^4.4.0"
+    gatsby-transformer-remark: "npm:^5.25.1"
     gatsby-transformer-sharp: "npm:^3.7.0"
     highlight.js: "npm:^9.15.8"
     indent-string: "npm:^4.0.0"
@@ -10350,6 +10434,21 @@ __metadata:
     normalize-url: "npm:^4.1.0"
     responselike: "npm:^2.0.0"
   checksum: 682a51337af56c1c789b1b6e9983678ab1db77664c4f97d79eee1f34741e4aa03b1de7317862a077fb1c04ac8331e1165bdc719a5373c773272f6c37d61554a8
+  languageName: node
+  linkType: hard
+
+"cacheable-request@npm:^7.0.2":
+  version: 7.0.4
+  resolution: "cacheable-request@npm:7.0.4"
+  dependencies:
+    clone-response: "npm:^1.0.2"
+    get-stream: "npm:^5.1.0"
+    http-cache-semantics: "npm:^4.0.0"
+    keyv: "npm:^4.0.0"
+    lowercase-keys: "npm:^2.0.0"
+    normalize-url: "npm:^6.0.1"
+    responselike: "npm:^2.0.0"
+  checksum: 0f4f2001260ecca78b9f64fc8245e6b5a5dcde24ea53006daab71f5e0e1338095aa1512ec099c4f9895a9e5acfac9da423cb7c079e131485891e9214aca46c41
   languageName: node
   linkType: hard
 
@@ -15613,6 +15712,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-core-utils@npm:^3.25.0":
+  version: 3.25.0
+  resolution: "gatsby-core-utils@npm:3.25.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.15.4"
+    ci-info: "npm:2.0.0"
+    configstore: "npm:^5.0.1"
+    fastq: "npm:^1.13.0"
+    file-type: "npm:^16.5.3"
+    fs-extra: "npm:^10.1.0"
+    got: "npm:^11.8.5"
+    import-from: "npm:^4.0.0"
+    lmdb: "npm:2.5.3"
+    lock: "npm:^1.1.0"
+    node-object-hash: "npm:^2.3.10"
+    proper-lockfile: "npm:^4.1.2"
+    resolve-from: "npm:^5.0.0"
+    tmp: "npm:^0.2.1"
+    xdg-basedir: "npm:^4.0.0"
+  checksum: 51c649ddfecfd7dc8e9eee7a9c74ede8ac58b667514c1d6ee3252db1f8cfcfef48ae068eb888fe92516a038430b3163fb1eace45b6f784840aacf7c14106ad18
+  languageName: node
+  linkType: hard
+
 "gatsby-graphiql-explorer@npm:^1.14.0":
   version: 1.14.0
   resolution: "gatsby-graphiql-explorer@npm:1.14.0"
@@ -16106,15 +16228,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-remark@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "gatsby-transformer-remark@npm:4.4.0"
+"gatsby-transformer-remark@npm:^5.25.1":
+  version: 5.25.1
+  resolution: "gatsby-transformer-remark@npm:5.25.1"
   dependencies:
-    "@babel/runtime": "npm:^7.14.0"
-    gatsby-core-utils: "npm:^2.7.0"
-    gray-matter: "npm:^4.0.2"
+    "@babel/runtime": "npm:^7.15.4"
+    gatsby-core-utils: "npm:^3.25.0"
+    gray-matter: "npm:^4.0.3"
     hast-util-raw: "npm:^6.0.2"
-    hast-util-to-html: "npm:^7.1.2"
+    hast-util-to-html: "npm:^7.1.3"
     lodash: "npm:^4.17.21"
     mdast-util-to-hast: "npm:^10.2.0"
     mdast-util-to-string: "npm:^2.0.0"
@@ -16127,14 +16249,14 @@ __metadata:
     remark-stringify: "npm:^9.0.1"
     retext-english: "npm:^3.0.4"
     sanitize-html: "npm:^1.27.5"
-    underscore.string: "npm:^3.3.5"
-    unified: "npm:^9.2.1"
+    underscore.string: "npm:^3.3.6"
+    unified: "npm:^9.2.2"
     unist-util-remove-position: "npm:^3.0.0"
     unist-util-select: "npm:^3.0.4"
     unist-util-visit: "npm:^2.0.3"
   peerDependencies:
-    gatsby: ^3.0.0-next.0
-  checksum: 86cbc2e99de5354c7c00543056532d0303ecbdb03f5bdc42281cfa4f1557358bb72f656df205a01863217e3cd959db476f65c870b57086c3de02d56c7f44c352
+    gatsby: ^4.0.0-next
+  checksum: b4335a33248210b3e4cb4590fc1326c8e0c0d7bb899ade20b0cb7408e621d423a183ce8de3c2f86c2fe357c84e6531675ae80d4cde24415c54338605ec0a304e
   languageName: node
   linkType: hard
 
@@ -16815,6 +16937,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"got@npm:^11.8.5":
+  version: 11.8.6
+  resolution: "got@npm:11.8.6"
+  dependencies:
+    "@sindresorhus/is": "npm:^4.0.0"
+    "@szmarczak/http-timer": "npm:^4.0.5"
+    "@types/cacheable-request": "npm:^6.0.1"
+    "@types/responselike": "npm:^1.0.0"
+    cacheable-lookup: "npm:^5.0.3"
+    cacheable-request: "npm:^7.0.2"
+    decompress-response: "npm:^6.0.0"
+    http2-wrapper: "npm:^1.0.0-beta.5.2"
+    lowercase-keys: "npm:^2.0.0"
+    p-cancelable: "npm:^2.0.0"
+    responselike: "npm:^2.0.0"
+  checksum: a30c74029d81bd5fe50dea1a0c970595d792c568e188ff8be254b5bc11e6158d1b014570772d4a30d0a97723e7dd34e7c8cc1a2f23018f60aece3070a7a5c2a5
+  languageName: node
+  linkType: hard
+
 "got@npm:^7.0.0":
   version: 7.1.0
   resolution: "got@npm:7.1.0"
@@ -17378,7 +17519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-to-html@npm:^7.1.2":
+"hast-util-to-html@npm:^7.1.3":
   version: 7.1.3
   resolution: "hast-util-to-html@npm:7.1.3"
   dependencies:
@@ -18052,6 +18193,13 @@ __metadata:
   dependencies:
     resolve-from: "npm:^5.0.0"
   checksum: 5040a7400e77e41e2c3bb6b1b123b52a15a284de1ffc03d605879942c00e3a87428499d8d031d554646108a0f77652549411167f6a7788e4fc7027eefccf3356
+  languageName: node
+  linkType: hard
+
+"import-from@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "import-from@npm:4.0.0"
+  checksum: 1fa29c05b048da18914e91d9a529e5d9b91774bebbfab10e53f59bcc1667917672b971cf102fee857f142e5e433ce69fa1f0a596e1c7d82f9947a5ec352694b9
   languageName: node
   linkType: hard
 
@@ -20395,6 +20543,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lmdb@npm:2.5.3":
+  version: 2.5.3
+  resolution: "lmdb@npm:2.5.3"
+  dependencies:
+    "@lmdb/lmdb-darwin-arm64": "npm:2.5.3"
+    "@lmdb/lmdb-darwin-x64": "npm:2.5.3"
+    "@lmdb/lmdb-linux-arm": "npm:2.5.3"
+    "@lmdb/lmdb-linux-arm64": "npm:2.5.3"
+    "@lmdb/lmdb-linux-x64": "npm:2.5.3"
+    "@lmdb/lmdb-win32-x64": "npm:2.5.3"
+    msgpackr: "npm:^1.5.4"
+    node-addon-api: "npm:^4.3.0"
+    node-gyp: "npm:latest"
+    node-gyp-build-optional-packages: "npm:5.0.3"
+    ordered-binary: "npm:^1.2.4"
+    weak-lru-cache: "npm:^1.2.2"
+  dependenciesMeta:
+    "@lmdb/lmdb-darwin-arm64":
+      optional: true
+    "@lmdb/lmdb-darwin-x64":
+      optional: true
+    "@lmdb/lmdb-linux-arm":
+      optional: true
+    "@lmdb/lmdb-linux-arm64":
+      optional: true
+    "@lmdb/lmdb-linux-x64":
+      optional: true
+    "@lmdb/lmdb-win32-x64":
+      optional: true
+  checksum: 7e230950c8a544a85cdcc60fa6f3a5650cc62846b8eb3a4badb1f891b2dc64c4794caf020bed4c96df97b1e7c8a4bbf44655445bf1a64a09707616e3e5d7b2c5
+  languageName: node
+  linkType: hard
+
 "load-bmfont@npm:^1.2.3, load-bmfont@npm:^1.3.1, load-bmfont@npm:^1.4.0":
   version: 1.4.0
   resolution: "load-bmfont@npm:1.4.0"
@@ -20528,7 +20709,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lock@npm:^1.0.0":
+"lock@npm:^1.0.0, lock@npm:^1.1.0":
   version: 1.1.0
   resolution: "lock@npm:1.1.0"
   checksum: 0350daf30548c89751533715ee3f85ca65b2a2e1386b4f84740c850fe58e0c2a80bb444302277ef0b772aca53fc2b2ab324610c613039bf1338edaa786ffcb87
@@ -22325,6 +22506,49 @@ __metadata:
   languageName: node
   linkType: hard
 
+"msgpackr-extract@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "msgpackr-extract@npm:3.0.2"
+  dependencies:
+    "@msgpackr-extract/msgpackr-extract-darwin-arm64": "npm:3.0.2"
+    "@msgpackr-extract/msgpackr-extract-darwin-x64": "npm:3.0.2"
+    "@msgpackr-extract/msgpackr-extract-linux-arm": "npm:3.0.2"
+    "@msgpackr-extract/msgpackr-extract-linux-arm64": "npm:3.0.2"
+    "@msgpackr-extract/msgpackr-extract-linux-x64": "npm:3.0.2"
+    "@msgpackr-extract/msgpackr-extract-win32-x64": "npm:3.0.2"
+    node-gyp: "npm:latest"
+    node-gyp-build-optional-packages: "npm:5.0.7"
+  dependenciesMeta:
+    "@msgpackr-extract/msgpackr-extract-darwin-arm64":
+      optional: true
+    "@msgpackr-extract/msgpackr-extract-darwin-x64":
+      optional: true
+    "@msgpackr-extract/msgpackr-extract-linux-arm":
+      optional: true
+    "@msgpackr-extract/msgpackr-extract-linux-arm64":
+      optional: true
+    "@msgpackr-extract/msgpackr-extract-linux-x64":
+      optional: true
+    "@msgpackr-extract/msgpackr-extract-win32-x64":
+      optional: true
+  bin:
+    download-msgpackr-prebuilds: bin/download-prebuilds.js
+  checksum: c37ff5f098aea43ad441df32b810c603d84f2c775132e5919a20dacdbd003995cbead794c80e8d2f1d673539fac9b90c621842391a868d5055be857ae30763b9
+  languageName: node
+  linkType: hard
+
+"msgpackr@npm:^1.5.4":
+  version: 1.9.9
+  resolution: "msgpackr@npm:1.9.9"
+  dependencies:
+    msgpackr-extract: "npm:^3.0.2"
+  dependenciesMeta:
+    msgpackr-extract:
+      optional: true
+  checksum: 384d55e8d9ce5be19f2e4369c1bc185b2b0f56e140c5028b78a1ca7d30d8f32efe35f08b76b1c9a3a0dec2589a465fdae036486126b6e106f9ee63c9ec399873
+  languageName: node
+  linkType: hard
+
 "multer@npm:^1.4.2":
   version: 1.4.2
   resolution: "multer@npm:1.4.2"
@@ -22600,6 +22824,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-gyp-build-optional-packages@npm:5.0.3":
+  version: 5.0.3
+  resolution: "node-gyp-build-optional-packages@npm:5.0.3"
+  bin:
+    node-gyp-build-optional-packages: bin.js
+    node-gyp-build-optional-packages-optional: optional.js
+    node-gyp-build-optional-packages-test: build-test.js
+  checksum: b407da0d3de637869a3c6920826e4033b78daba3db4c28459469f3a3f09b41d99d745c4318d09c7fdc1d147d875b440642dc043697bc932bed6beaa6bb1729ec
+  languageName: node
+  linkType: hard
+
+"node-gyp-build-optional-packages@npm:5.0.7":
+  version: 5.0.7
+  resolution: "node-gyp-build-optional-packages@npm:5.0.7"
+  bin:
+    node-gyp-build-optional-packages: bin.js
+    node-gyp-build-optional-packages-optional: optional.js
+    node-gyp-build-optional-packages-test: build-test.js
+  checksum: f61780b83ee665d88a1b2d0f5375d3455fabed1af4a009fd4396ed0b19ed6ad2215d4adbc76bd6eea0aafde0c72990e2cee9c888eeb28d6da2c8e5f8bce3ca0f
+  languageName: node
+  linkType: hard
+
 "node-gyp@npm:latest":
   version: 9.1.0
   resolution: "node-gyp@npm:9.1.0"
@@ -22658,7 +22904,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-object-hash@npm:^2.3.9":
+"node-object-hash@npm:^2.3.10, node-object-hash@npm:^2.3.9":
   version: 2.3.10
   resolution: "node-object-hash@npm:2.3.10"
   checksum: 42fcd4e56b0dc273d378593417bd6f17d73d8590cd7e174b015bd32d4e64ccc4b58ebf1e4f205932795fa66464c17bf72f107424c55de48782daabc26fd3da6c
@@ -23127,6 +23373,13 @@ __metadata:
     prelude-ls: "npm:^1.2.1"
     type-check: "npm:^0.4.0"
   checksum: fa28d3016395974f7fc087d6bbf0ac7f58ac3489f4f202a377e9c194969f329a7b88c75f8152b33fb08794a30dcd5c079db6bb465c28151357f113d80bbf67da
+  languageName: node
+  linkType: hard
+
+"ordered-binary@npm:^1.2.4":
+  version: 1.4.1
+  resolution: "ordered-binary@npm:1.4.1"
+  checksum: f6f96563d960140ab4120555c038d26f2b4c1a89c291c53c000f5276f9becb099af6b61a245be3c49c55900de9958b37aacb48cb0abc2be7ca574c730d63763f
   languageName: node
   linkType: hard
 
@@ -28357,6 +28610,13 @@ pem@dexus/pem:
   languageName: node
   linkType: hard
 
+"sprintf-js@npm:^1.1.1":
+  version: 1.1.3
+  resolution: "sprintf-js@npm:1.1.3"
+  checksum: e7587128c423f7e43cc625fe2f87e6affdf5ca51c1cc468e910d8aaca46bb44a7fbcfa552f787b1d3987f7043aeb4527d1b99559e6621e01b42b3f45e5a24cbb
+  languageName: node
+  linkType: hard
+
 "sprintf-js@npm:~1.0.2":
   version: 1.0.3
   resolution: "sprintf-js@npm:1.0.3"
@@ -30274,6 +30534,16 @@ pem@dexus/pem:
   languageName: node
   linkType: hard
 
+"underscore.string@npm:^3.3.6":
+  version: 3.3.6
+  resolution: "underscore.string@npm:3.3.6"
+  dependencies:
+    sprintf-js: "npm:^1.1.1"
+    util-deprecate: "npm:^1.0.2"
+  checksum: 4de7b855ef9890e4db61f3451a86193f4ba398c9615aa78bfb663d24670c3c0614aa02ffa7bd71ec2b1bddb58f41e3f2c074e9b1599722b27d5b5d1895237bfb
+  languageName: node
+  linkType: hard
+
 "underscore@npm:>=1.8.3, underscore@npm:^1.12.1, underscore@npm:^1.9.1":
   version: 1.13.4
   resolution: "underscore@npm:1.13.4"
@@ -30379,7 +30649,7 @@ pem@dexus/pem:
   languageName: node
   linkType: hard
 
-"unified@npm:^9.1.0, unified@npm:^9.2.1, unified@npm:^9.2.2":
+"unified@npm:^9.1.0, unified@npm:^9.2.2":
   version: 9.2.2
   resolution: "unified@npm:9.2.2"
   dependencies:
@@ -31304,6 +31574,13 @@ pem@dexus/pem:
   dependencies:
     minimalistic-assert: "npm:^1.0.0"
   checksum: c18b51c4e1fb19705c94b93c0cf093ba014606abceee949399d56074ef1863bf4897a8d884be24e8d224d18c9ce411cf6924006d0a5430492729af51256e067a
+  languageName: node
+  linkType: hard
+
+"weak-lru-cache@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "weak-lru-cache@npm:1.2.2"
+  checksum: 441f86236d34b9750ccf2bae1658cc62b49e805b740b3f3bf4b1d78e8cac50b6c05d31791f3f5bbf00f3b544834ae20c0f5a374efc833b7ba2a11dd8af37a790
   languageName: node
   linkType: hard
 
