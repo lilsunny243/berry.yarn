@@ -38034,7 +38034,7 @@ const RAW_RUNTIME_STATE =
           ["@lmdb/lmdb-linux-arm64", "npm:2.5.3"],\
           ["@lmdb/lmdb-linux-x64", "npm:2.5.3"],\
           ["@lmdb/lmdb-win32-x64", "npm:2.5.3"],\
-          ["msgpackr", "npm:1.9.9"],\
+          ["msgpackr", "npm:1.10.1"],\
           ["node-addon-api", "npm:4.3.0"],\
           ["node-gyp", "npm:9.1.0"],\
           ["node-gyp-build-optional-packages", "npm:5.0.3"],\
@@ -40242,10 +40242,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["msgpackr", [\
-      ["npm:1.9.9", {\
-        "packageLocation": "./.yarn/cache/msgpackr-npm-1.9.9-75b366d55f-384d55e8d9.zip/node_modules/msgpackr/",\
+      ["npm:1.10.1", {\
+        "packageLocation": "./.yarn/cache/msgpackr-npm-1.10.1-5c5ff5c553-9fc78c7843.zip/node_modules/msgpackr/",\
         "packageDependencies": [\
-          ["msgpackr", "npm:1.9.9"],\
+          ["msgpackr", "npm:1.10.1"],\
           ["msgpackr-extract", "npm:3.0.2"]\
         ],\
         "linkType": "HARD"\
