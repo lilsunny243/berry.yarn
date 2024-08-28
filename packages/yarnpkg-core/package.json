@@ -27,7 +27,7 @@
     "fast-glob": "^3.2.2",
     "got": "^11.7.0",
     "lodash": "^4.17.15",
-    "micromatch": "^4.0.2",
+    "micromatch": "^4.0.8",
     "p-limit": "^2.2.0",
     "semver": "^7.1.2",
     "strip-ansi": "^6.0.0",
