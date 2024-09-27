@@ -7493,7 +7493,7 @@ __metadata:
     lodash: "npm:^4.17.15"
     micromatch: "npm:^4.0.2"
     p-limit: "npm:^2.2.0"
-    rollup: "npm:^2.59.0"
+    rollup: "npm:^2.79.2"
     rollup-plugin-esbuild: "npm:^3.0.2"
     rollup-plugin-terser: "npm:^7.0.2"
     semver: "npm:^7.1.2"
@@ -8303,7 +8303,7 @@ __metadata:
     "@yarnpkg/libzip": "workspace:^"
     arg: "npm:^5.0.2"
     esbuild: "npm:esbuild-wasm@^0.15.15"
-    rollup: "npm:^2.59.0"
+    rollup: "npm:^2.79.2"
     rollup-plugin-esbuild: "npm:^3.0.2"
     semver: "npm:^7.1.2"
     tslib: "npm:^2.4.0"
@@ -27543,9 +27543,9 @@ pem@dexus/pem:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.59.0":
-  version: 2.59.0
-  resolution: "rollup@npm:2.59.0"
+"rollup@npm:^2.79.2":
+  version: 2.79.2
+  resolution: "rollup@npm:2.79.2"
   dependencies:
     fsevents: "npm:~2.3.2"
   dependenciesMeta:
@@ -27553,7 +27553,7 @@ pem@dexus/pem:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: c4dd25acc1a231cceaa4f2e6ae412b258517f522ba9b6ec42e273636feeaba422d76bd145ac332f0fec97dc100c213db848f93725e3fc718d3fc29a69b032a5a
+  checksum: 095ba0a82811b1866a76d826987743278db0a87c45092656986bfff490326b66187d5f9ff0c24cf8d5682bc470aa00c36654e0044d6b6335ac0c1201b8280880
   languageName: node
   linkType: hard
 
@@ -31547,7 +31547,7 @@ pem@dexus/pem:
     "@yarnpkg/fslib": "workspace:^"
     "@yarnpkg/libzip": "workspace:^"
     esbuild: "npm:esbuild-wasm@^0.15.15"
-    rollup: "npm:^2.59.0"
+    rollup: "npm:^2.79.2"
     rollup-plugin-esbuild: "npm:^3.0.2"
     rollup-plugin-terser: "npm:^7.0.2"
     semver: "npm:^7.1.2"
