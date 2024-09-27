@@ -20,7 +20,7 @@
     "@yarnpkg/libzip": "workspace:^",
     "arg": "^5.0.2",
     "esbuild": "npm:esbuild-wasm@^0.15.15",
-    "rollup": "^2.59.0",
+    "rollup": "^2.79.2",
     "rollup-plugin-esbuild": "^3.0.2",
     "semver": "^7.1.2",
     "tslib": "^2.4.0"
