@@ -35094,17 +35094,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["http-proxy-middleware", [\
-      ["npm:2.0.6", {\
-        "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-768e7ae5a4.zip/node_modules/http-proxy-middleware/",\
+      ["npm:2.0.7", {\
+        "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-2.0.7-886a673e85-4a51bf612b.zip/node_modules/http-proxy-middleware/",\
         "packageDependencies": [\
-          ["http-proxy-middleware", "npm:2.0.6"]\
+          ["http-proxy-middleware", "npm:2.0.7"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:9ef93fdd0354a1a5706545eef681ef386c27d3be83256f0277e6d05e1e7f4702a91e58df989cb2a2a671142596033696d95c2bd86bc67e0c19d6837eb95cb615#npm:2.0.6", {\
-        "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-4e1c308f90/0/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-768e7ae5a4.zip/node_modules/http-proxy-middleware/",\
+      ["virtual:9ef93fdd0354a1a5706545eef681ef386c27d3be83256f0277e6d05e1e7f4702a91e58df989cb2a2a671142596033696d95c2bd86bc67e0c19d6837eb95cb615#npm:2.0.7", {\
+        "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-1c86ff4d70/0/cache/http-proxy-middleware-npm-2.0.7-886a673e85-4a51bf612b.zip/node_modules/http-proxy-middleware/",\
         "packageDependencies": [\
-          ["http-proxy-middleware", "virtual:9ef93fdd0354a1a5706545eef681ef386c27d3be83256f0277e6d05e1e7f4702a91e58df989cb2a2a671142596033696d95c2bd86bc67e0c19d6837eb95cb615#npm:2.0.6"],\
+          ["http-proxy-middleware", "virtual:9ef93fdd0354a1a5706545eef681ef386c27d3be83256f0277e6d05e1e7f4702a91e58df989cb2a2a671142596033696d95c2bd86bc67e0c19d6837eb95cb615#npm:2.0.7"],\
           ["@types/express", "npm:4.17.14"],\
           ["@types/http-proxy", "npm:1.17.9"],\
           ["http-proxy", "npm:1.18.1"],\
@@ -51680,7 +51680,7 @@ const RAW_RUNTIME_STATE =
           ["express", "npm:4.19.2"],\
           ["graceful-fs", "npm:4.2.10"],\
           ["html-entities", "npm:2.3.3"],\
-          ["http-proxy-middleware", "virtual:9ef93fdd0354a1a5706545eef681ef386c27d3be83256f0277e6d05e1e7f4702a91e58df989cb2a2a671142596033696d95c2bd86bc67e0c19d6837eb95cb615#npm:2.0.6"],\
+          ["http-proxy-middleware", "virtual:9ef93fdd0354a1a5706545eef681ef386c27d3be83256f0277e6d05e1e7f4702a91e58df989cb2a2a671142596033696d95c2bd86bc67e0c19d6837eb95cb615#npm:2.0.7"],\
           ["ipaddr.js", "npm:2.0.1"],\
           ["open", "npm:8.4.0"],\
           ["p-retry", "npm:4.6.2"],\
